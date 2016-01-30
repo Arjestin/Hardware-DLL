@@ -1,0 +1,3 @@
+targeted_function_mul_32s_32s_32_6
+targeted_function_rm_s_axi
+targeted_function

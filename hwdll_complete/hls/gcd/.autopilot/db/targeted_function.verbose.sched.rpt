@@ -1,0 +1,228 @@
+
+
+================================================================
+== Vivado HLS Report for 'targeted_function'
+================================================================
+* Date:           Fri Jan 22 12:53:01 2016
+
+* Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
+* Project:        hls
+* Solution:       gcd
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      5.81|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|        36|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 4
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (!tmp_1 & !tmp_2)
+	4  / (tmp_1) | (tmp_2)
+2 --> 
+	3  / (!tmp_6)
+	4  / (tmp_6)
+3 --> 
+	2  / true
+4 --> 
+* FSM state operations: 
+
+ <State 1>: 5.81ns
+ST_1: stg_5 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(i32 %input_000) nounwind, !map !0
+
+ST_1: stg_6 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i32 %input_001) nounwind, !map !6
+
+ST_1: stg_7 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i32* %output_000) nounwind, !map !10
+
+ST_1: stg_8 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !16
+
+ST_1: stg_9 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecTopModule([18 x i8]* @targeted_function_str) nounwind
+
+ST_1: input_001_read [1/1] 1.00ns
+:5  %input_001_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %input_001) nounwind
+
+ST_1: input_000_read [1/1] 1.00ns
+:6  %input_000_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %input_000) nounwind
+
+ST_1: stg_12 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecInterface(i32* %output_000, [10 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [3 x i8]* @p_str1, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: stg_13 [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecInterface(i32 %input_001, [10 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [3 x i8]* @p_str1, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: stg_14 [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecInterface(i32 %input_000, [10 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [3 x i8]* @p_str1, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: stg_15 [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [3 x i8]* @p_str1, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: tmp [1/1] 1.37ns
+:11  %tmp = or i32 %input_001_read, %input_000_read
+
+ST_1: tmp_1 [1/1] 2.52ns
+:12  %tmp_1 = icmp eq i32 %tmp, 0
+
+ST_1: stg_18 [1/1] 0.00ns
+:13  br i1 %tmp_1, label %1, label %2
+
+ST_1: tmp_2 [1/1] 2.52ns
+:0  %tmp_2 = icmp eq i32 %input_000_read, 0
+
+ST_1: stg_20 [1/1] 1.57ns
+:1  br i1 %tmp_2, label %3, label %.preheader
+
+ST_1: tmp_3 [1/1] 0.00ns
+:0  %tmp_3 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %input_001_read, i32 31)
+
+ST_1: tmp_4 [1/1] 2.44ns
+:1  %tmp_4 = sub nsw i32 0, %input_001_read
+
+ST_1: input_001_assign [1/1] 1.37ns
+:2  %input_001_assign = select i1 %tmp_3, i32 %tmp_4, i32 %input_001_read
+
+ST_1: stg_24 [1/1] 1.00ns
+:3  call void @_ssdm_op_Write.s_axilite.i32P(i32* %output_000, i32 %input_001_assign) nounwind
+
+ST_1: stg_25 [1/1] 1.57ns
+:4  br label %6
+
+ST_1: stg_26 [1/1] 1.00ns
+:0  call void @_ssdm_op_Write.s_axilite.i32P(i32* %output_000, i32 -1) nounwind
+
+ST_1: stg_27 [1/1] 1.57ns
+:1  br label %6
+
+
+ <State 2>: 5.41ns
+ST_2: input_000_assign [1/1] 0.00ns
+.preheader:0  %input_000_assign = phi i32 [ %input_001_assign_1, %4 ], [ %input_001_read, %2 ]
+
+ST_2: p_1 [1/1] 0.00ns
+.preheader:1  %p_1 = phi i32 [ %input_000_assign, %4 ], [ %input_000_read, %2 ]
+
+ST_2: tmp_6 [1/1] 2.52ns
+.preheader:2  %tmp_6 = icmp eq i32 %input_000_assign, 0
+
+ST_2: stg_31 [1/1] 0.00ns
+.preheader:3  br i1 %tmp_6, label %5, label %4
+
+ST_2: input_001_assign_1 [36/36] 5.41ns
+:0  %input_001_assign_1 = srem i32 %p_1, %input_000_assign
+
+ST_2: tmp_5 [1/1] 0.00ns
+:0  %tmp_5 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_1, i32 31)
+
+ST_2: tmp_8 [1/1] 2.44ns
+:1  %tmp_8 = sub nsw i32 0, %p_1
+
+ST_2: tmp_9 [1/1] 1.37ns
+:2  %tmp_9 = select i1 %tmp_5, i32 %tmp_8, i32 %p_1
+
+ST_2: stg_36 [1/1] 1.00ns
+:3  call void @_ssdm_op_Write.s_axilite.i32P(i32* %output_000, i32 %tmp_9) nounwind
+
+ST_2: stg_37 [1/1] 1.57ns
+:4  br label %6
+
+
+ <State 3>: 5.41ns
+ST_3: input_001_assign_1 [1/36] 5.41ns
+:0  %input_001_assign_1 = srem i32 %p_1, %input_000_assign
+
+ST_3: stg_39 [1/1] 0.00ns
+:1  br label %.preheader
+
+
+ <State 4>: 1.37ns
+ST_4: p_0 [1/1] 0.00ns
+:0  %p_0 = phi i1 [ true, %1 ], [ false, %3 ], [ false, %5 ]
+
+ST_4: p_0_cast [1/1] 1.37ns
+:1  %p_0_cast = select i1 %p_0, i32 -1, i32 0
+
+ST_4: stg_42 [1/1] 0.00ns
+:2  ret i32 %p_0_cast
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

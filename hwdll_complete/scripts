@@ -1,0 +1,44 @@
+###################################################################################
+
+.: Vivado 2015.4 :.
+cd C:/xilinx
+source ./targeted_functions/build.tcl
+
+###################################################################################
+
+.: Vivado 2015.4 :.
+cd C:/xilinx
+source ./targeted_functions/numbers/ide.tcl
+source ./targeted_functions/int_max/ide.tcl
+source ./targeted_functions/adder_subtractor/ide.tcl
+source ./targeted_functions/multiplier/ide.tcl
+source ./targeted_functions/bitwise_right_shift/ide.tcl
+source ./targeted_functions/gcd/ide.tcl
+source ./targeted_functions/fibonacci/ide.tcl
+source ./targeted_functions/prime/ide.tcl
+source ./targeted_functions/prime_neighbours/ide.tcl
+
+###################################################################################
+
+.: Parallella Ubuntu 14.04 :.
+Username/Password: parallella
+
+.: Static IP Address: 132.68.61.100 :.
+sudo -s
+mkdir /media/sdcard
+mount /dev/mmcblk0p1 /media/sdcard
+cp -R /media/sdcard /sdcard
+umount /media/sdcard
+rm -R /media/sdcard
+chown -R parallella: /sdcard
+chmod -R 775 /sdcard
+cat /sdcard/eth0 > /etc/network/interfaces.d/eth0
+su parallella
+
+.: HWDLL Self-Test :.
+sudo -s
+gcc /sdcard/hwdll/*.c -o /sdcard/hwdll/test
+/sdcard/hwdll/./test
+su parallella
+
+###################################################################################

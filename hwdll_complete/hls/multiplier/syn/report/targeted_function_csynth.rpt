@@ -1,0 +1,137 @@
+
+
+================================================================
+== Vivado HLS Report for 'targeted_function'
+================================================================
+* Date:           Fri Jan 22 12:31:48 2016
+
+* Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
+* Project:        hls
+* Solution:       multiplier
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.08|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    5|    5|    6|    6|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        0|      4|     182|    296|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      1|
+|Register         |        -|      -|       6|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      4|     188|    297|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      1|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------+------------------------------------+---------+-------+-----+-----+
+    |                Instance               |               Module               | BRAM_18K| DSP48E|  FF | LUT |
+    +---------------------------------------+------------------------------------+---------+-------+-----+-----+
+    |targeted_function_mul_32s_32s_32_6_U0  |targeted_function_mul_32s_32s_32_6  |        0|      4|    0|    0|
+    |targeted_function_rm_s_axi_U           |targeted_function_rm_s_axi          |        0|      0|  182|  296|
+    +---------------------------------------+------------------------------------+---------+-------+-----+-----+
+    |Total                                  |                                    |        0|      4|  182|  296|
+    +---------------------------------------+------------------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |   1|          7|    1|          7|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |   1|          7|    1|          7|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------+---+----+-----+-----------+
+    |    Name   | FF| LUT| Bits| Const Bits|
+    +-----------+---+----+-----+-----------+
+    |ap_CS_fsm  |  6|   0|    6|          0|
+    +-----------+---+----+-----+-----------+
+    |Total      |  6|   0|    6|          0|
+    +-----------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+-------------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++------------------+-----+-----+------------+-------------------+--------------+
+|s_axi_rm_AWVALID  |  in |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_AWREADY  | out |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_AWADDR   |  in |    6|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_WVALID   |  in |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_WREADY   | out |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_WDATA    |  in |   32|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_WSTRB    |  in |    4|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_ARVALID  |  in |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_ARREADY  | out |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_ARADDR   |  in |    6|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_RVALID   | out |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_RREADY   |  in |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_RDATA    | out |   32|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_RRESP    | out |    2|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_BVALID   | out |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_BREADY   |  in |    1|    s_axi   |         rm        |    pointer   |
+|s_axi_rm_BRESP    | out |    2|    s_axi   |         rm        |    pointer   |
+|ap_clk            |  in |    1| ap_ctrl_hs | targeted_function | return value |
+|ap_rst_n          |  in |    1| ap_ctrl_hs | targeted_function | return value |
+|interrupt         | out |    1| ap_ctrl_hs | targeted_function | return value |
++------------------+-----+-----+------------+-------------------+--------------+
+

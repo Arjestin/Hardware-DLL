@@ -1,0 +1,328 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
+| Date              : Fri Jan 22 11:50:58 2016
+| Host              : psl-realsense running 64-bit major release  (build 9200)
+| Command           : report_clock_utilization -file top_wrapper_clock_utilization_routed.rpt
+| Design            : top_wrapper
+| Device            : 7z020-clg400
+| Speed File        : -1  PRODUCTION 1.11 2014-09-11
+| Temperature Grade : C
+----------------------------------------------------------------------------------------------
+
+Clock Utilization Report
+
+Table of Contents
+-----------------
+1. Clock Primitive Utilization
+2. Details of Global Clocks
+3. Details of Regional Clocks
+4. Details of Multi-Regional Clocks
+5. Details of I/O Clocks
+6. Details of Local Clocks
+7. Reserved Clocks in X0Y0
+8. Reserved Clocks in X1Y0
+9. Reserved Clocks in X1Y1
+10. Reserved Clocks in X1Y2
+11. Clock Regions : Key Resource Utilization
+12. Net wise resources used in clock region X0Y0
+13. Net wise resources used in clock region X1Y0
+14. Net wise resources used in clock region X0Y1
+15. Net wise resources used in clock region X1Y1
+16. Net wise resources used in clock region X0Y2
+17. Net wise resources used in clock region X1Y2
+
+1. Clock Primitive Utilization
+------------------------------
+
++-------+------+-----------+-----------+
+| Type  | Used | Available | Num Fixed |
++-------+------+-----------+-----------+
+| BUFG  |    6 |        32 |         0 |
+| BUFH  |    0 |        72 |         0 |
+| BUFIO |    1 |        16 |         1 |
+| MMCM  |    0 |         4 |         0 |
+| PLL   |    1 |         4 |         0 |
+| BUFR  |    1 |        16 |         0 |
+| BUFMR |    0 |         8 |         0 |
++-------+------+-----------+-----------+
+
+
+2. Details of Global Clocks
+---------------------------
+
++-------+--------------------------------------------------------------------------------+--------------------------------------------------------+---------------+-------+---------------+
+|       |                                                                                |                                                        |   Num Loads   |       |               |
++-------+--------------------------------------------------------------------------------+--------------------------------------------------------+-------+-------+-------+---------------+
+| Index | BUFG Cell                                                                      | Net Name                                               |  BELs | Sites | Fixed | PR Clock Type |
++-------+--------------------------------------------------------------------------------+--------------------------------------------------------+-------+-------+-------+---------------+
+|     1 | top_i/static_logic/elink2/eclock_0/inst/cclk_buf                               | top_i/static_logic/elink2/eclock_0/inst/cclk_base      |     1 |     1 |    no | Static        |
+|     2 | top_i/static_logic/elink2/eclock_0/inst/lclk_out_buf                           | top_i/static_logic/elink2/eclock_0/inst/lclk_out       |     3 |     3 |    no | Static        |
+|     3 | top_i/static_logic/elink2/eclock_0/inst/lclk_s_buf                             | top_i/static_logic/elink2/eclock_0/inst/lclk_s         |     9 |     9 |    no | Static        |
+|     4 | top_i/static_logic/elink2/eclock_0/inst/cclk_p_buf                             | top_i/static_logic/elink2/eclock_0/inst/cclk_p         |    14 |     4 |    no | Static        |
+|     5 | top_i/static_logic/elink2/eclock_0/inst/lclk_p_buf                             | top_i/static_logic/elink2/eclock_0/inst/lclk_p         |   995 |   252 |    no | Static        |
+|     6 | top_i/static_logic/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 | 11040 |  3168 |    no | RM active     |
++-------+--------------------------------------------------------------------------------+--------------------------------------------------------+-------+-------+-------+---------------+
+
+
++-------+--------------------------------------------------+------------------------------------------------------+--------------+-------+---------------+
+|       |                                                  |                                                      |   Num Loads  |       |               |
++-------+--------------------------------------------------+------------------------------------------------------+------+-------+-------+---------------+
+| Index | PLL Cell                                         | Net Name                                             | BELs | Sites | Fixed | PR Clock Type |
++-------+--------------------------------------------------+------------------------------------------------------+------+-------+-------+---------------+
+|     1 | top_i/static_logic/elink2/eclock_0/inst/eclk_pll | top_i/static_logic/elink2/eclock_0/inst/cclk_p_src   |    1 |     1 |    no | Static        |
+|     2 | top_i/static_logic/elink2/eclock_0/inst/eclk_pll | top_i/static_logic/elink2/eclock_0/inst/cclk_src     |    1 |     1 |    no | Static        |
+|     3 | top_i/static_logic/elink2/eclock_0/inst/eclk_pll | top_i/static_logic/elink2/eclock_0/inst/clkfb        |    1 |     1 |    no | Static        |
+|     4 | top_i/static_logic/elink2/eclock_0/inst/eclk_pll | top_i/static_logic/elink2/eclock_0/inst/lclk_out_src |    1 |     1 |    no | Static        |
+|     5 | top_i/static_logic/elink2/eclock_0/inst/eclk_pll | top_i/static_logic/elink2/eclock_0/inst/lclk_p_src   |    1 |     1 |    no | Static        |
+|     6 | top_i/static_logic/elink2/eclock_0/inst/eclk_pll | top_i/static_logic/elink2/eclock_0/inst/lclk_s_src   |    1 |     1 |    no | Static        |
++-------+--------------------------------------------------+------------------------------------------------------+------+-------+-------+---------------+
+
+
+3. Details of Regional Clocks
+-----------------------------
+
++-------+-----------------------------------------------------+--------------------------------------------------+--------------+-------+---------------+
+|       |                                                     |                                                  |   Num Loads  |       |               |
++-------+-----------------------------------------------------+--------------------------------------------------+------+-------+-------+---------------+
+| Index | BUFR Cell                                           | Net Name                                         | BELs | Sites | Fixed | PR Clock Type |
++-------+-----------------------------------------------------+--------------------------------------------------+------+-------+-------+---------------+
+|     1 | top_i/static_logic/elink2/eio_rx_0/inst/clkout_bufr | top_i/static_logic/elink2/eio_rx_0/inst/rxlclk_p | 1065 |   199 |    no | Static        |
++-------+-----------------------------------------------------+--------------------------------------------------+------+-------+-------+---------------+
+
+
+4. Details of Multi-Regional Clocks
+-----------------------------------
+
+5. Details of I/O Clocks
+------------------------
+
++-------+------------------------------------------------------+---------------------------------------------------+--------------+-------+---------------+
+|       |                                                      |                                                   |   Num Loads  |       |               |
++-------+------------------------------------------------------+---------------------------------------------------+------+-------+-------+---------------+
+| Index | BUFIO Cell                                           | Net Name                                          | BELs | Sites | Fixed | PR Clock Type |
++-------+------------------------------------------------------+---------------------------------------------------+------+-------+-------+---------------+
+|     1 | top_i/static_logic/elink2/eio_rx_0/inst/bufio_rxlclk | top_i/static_logic/elink2/eio_rx_0/inst/rx_lclk_s |    9 |    18 |   yes | Static        |
++-------+------------------------------------------------------+---------------------------------------------------+------+-------+-------+---------------+
+
+
+6. Details of Local Clocks
+--------------------------
+
++-------+-------------------------------------------------------+-------------------------------------------------+--------------+-------+---------------+
+|       |                                                       |                                                 |   Num Loads  |       |               |
++-------+-------------------------------------------------------+-------------------------------------------------+------+-------+-------+---------------+
+| Index | Local Clk Src                                         | Net Name                                        | BELs | Sites | Fixed | PR Clock Type |
++-------+-------------------------------------------------------+-------------------------------------------------+------+-------+-------+---------------+
+|     1 | top_i/static_logic/elink2/eio_rx_0/inst/ibufds_rxlclk | top_i/static_logic/elink2/eio_rx_0/inst/rx_lclk |    2 |     2 |   yes | Static        |
++-------+-------------------------------------------------------+-------------------------------------------------+------+-------+-------+---------------+
+
+
+7. Reserved Clocks in X0Y0
+--------------------------
+
++-------+--------------------------------------------------------+
+| Index | Net Name                                               |
++-------+--------------------------------------------------------+
+|     1 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 |
++-------+--------------------------------------------------------+
+
+
+8. Reserved Clocks in X1Y0
+--------------------------
+
++-------+--------------------------------------------------------+
+| Index | Net Name                                               |
++-------+--------------------------------------------------------+
+|     1 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 |
++-------+--------------------------------------------------------+
+
+
+9. Reserved Clocks in X1Y1
+--------------------------
+
++-------+--------------------------------------------------------+
+| Index | Net Name                                               |
++-------+--------------------------------------------------------+
+|     1 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 |
++-------+--------------------------------------------------------+
+
+
+10. Reserved Clocks in X1Y2
+---------------------------
+
++-------+--------------------------------------------------------+
+| Index | Net Name                                               |
++-------+--------------------------------------------------------+
+|     1 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 |
++-------+--------------------------------------------------------+
+
+
+11. Clock Regions : Key Resource Utilization
+--------------------------------------------
+
++-------------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+|                   | Global Clock |     BUFRs    |    BUFMRs    |    BUFIOs    |     MMCM     |      PLL     |      GT      |      PCI     |    ILOGIC    |    OLOGIC    |      FF      |     LUTM     |    RAMB18    |    RAMB36    |    DSP48E1   |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| X0Y0              | 1(1) |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1295 | 20000 |    8 |  4000 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X1Y0              | 1(1) |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    1 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1142 | 25600 |    0 |  3400 |    0 |    60 |    0 |    30 |    0 |    40 |
+| X0Y1              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 3802 |  9600 |  244 |  1600 |    0 |    20 |    1 |    10 |    0 |    20 |
+| X1Y1              | 3(1) |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1559 | 20800 |   10 |  3400 |    0 |    60 |    1 |    30 |    0 |    40 |
+| X0Y2              |    3 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 2265 |  9600 |  542 |  1600 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y2              | 6(1) |    12 |    1 |     4 |    0 |     2 |    1 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    9 |    50 |   11 |    50 | 1946 | 20800 |  280 |  3400 |    0 |    60 |    0 |    30 |    0 |    40 |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+* PR reserved clock totals appear in parentheses
+** RAMB36 site can be used as two RAMB18/FIFO18 sites.
+
+
+12. Net wise resources used in clock region X0Y0
+------------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                     Clock Net Name                     | PR Clock Type |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| BUFG        | BUFHCE_X0Y7 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 1295 |     8 |        0 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 | RM active     |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+
+
+13. Net wise resources used in clock region X1Y0
+------------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                     Clock Net Name                     | PR Clock Type |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| BUFG        | BUFHCE_X1Y3 |   no  |         0 |        1 |       0 |         0 |       0 |       0 | 1142 |     0 |        0 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 | RM active     |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+
+
+14. Net wise resources used in clock region X0Y1
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                     Clock Net Name                     | PR Clock Type |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| BUFG        | BUFHCE_X0Y20 |   no  |         0 |        0 |       0 |         2 |       0 |       0 | 3802 |   244 |        0 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 | Static        |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+
+
+15. Net wise resources used in clock region X1Y1
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                     Clock Net Name                     | PR Clock Type |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| BUFG        | BUFHCE_X1Y20 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |    4 |     0 |        0 | top_i/static_logic/elink2/eclock_0/inst/lclk_p         | Static        |
+| BUFG        | BUFHCE_X1Y21 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   13 |     0 |        0 | top_i/static_logic/elink2/eclock_0/inst/cclk_p         | Static        |
+| BUFG        | BUFHCE_X1Y15 |   no  |         0 |        0 |       0 |         2 |       0 |       0 | 1542 |    10 |        0 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 | RM active     |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+
+
+16. Net wise resources used in clock region X0Y2
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                     Clock Net Name                     | PR Clock Type |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| BUFG        | BUFHCE_X0Y34 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |    1 |     0 |        0 | top_i/static_logic/elink2/eclock_0/inst/lclk_out       | Static        |
+| BUFG        | BUFHCE_X0Y33 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  962 |     0 |        0 | top_i/static_logic/elink2/eclock_0/inst/lclk_p         | Static        |
+| BUFG        | BUFHCE_X0Y32 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 1302 |   542 |        0 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 | Static        |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+
+
+17. Net wise resources used in clock region X1Y2
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                     Clock Net Name                     | PR Clock Type |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+| BUFG        | BUFHCE_X1Y34 |   no  |         0 |        0 |       0 |         0 |       0 |       1 |    0 |     0 |        0 | top_i/static_logic/elink2/eclock_0/inst/cclk_base      | Static        |
+| BUFG        | BUFHCE_X1Y32 |   no  |         0 |        0 |       0 |         0 |       0 |       1 |    0 |     0 |        0 | top_i/static_logic/elink2/eclock_0/inst/cclk_p         | Static        |
+| BUFG        | BUFHCE_X1Y35 |   no  |         0 |        0 |       0 |         0 |       0 |       9 |    0 |     0 |        0 | top_i/static_logic/elink2/eclock_0/inst/lclk_s         | Static        |
+| BUFIO       |      ---     |  yes  |         0 |        0 |       0 |         0 |      18 |       0 |    0 |     0 |        0 | top_i/static_logic/elink2/eio_rx_0/inst/rx_lclk_s      | Static        |
+| BUFG        | BUFHCE_X1Y31 |   no  |         0 |        0 |       0 |         0 |       0 |       1 |    1 |     0 |        0 | top_i/static_logic/elink2/eclock_0/inst/lclk_out       | Static        |
+| BUFG        | BUFHCE_X1Y33 |   no  |         0 |        0 |       0 |         0 |       0 |       9 |   20 |     0 |        0 | top_i/static_logic/elink2/eclock_0/inst/lclk_p         | Static        |
+| BUFR        |      ---     |   no  |         0 |        0 |       0 |         0 |       9 |       0 |  776 |   280 |        0 | top_i/static_logic/elink2/eio_rx_0/inst/rxlclk_p       | Static        |
+| BUFG        | BUFHCE_X1Y27 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 1149 |     0 |        0 | top_i/static_logic/processing_system7_0/inst/FCLK_CLK0 | RM active     |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------+---------------+
+
+
+
+# Location of BUFG Primitives 
+set_property LOC BUFGCTRL_X0Y4 [get_cells top_i/static_logic/elink2/eclock_0/inst/cclk_buf]
+set_property LOC BUFGCTRL_X0Y1 [get_cells top_i/static_logic/elink2/eclock_0/inst/cclk_p_buf]
+set_property LOC BUFGCTRL_X0Y3 [get_cells top_i/static_logic/elink2/eclock_0/inst/lclk_out_buf]
+set_property LOC BUFGCTRL_X0Y0 [get_cells top_i/static_logic/elink2/eclock_0/inst/lclk_p_buf]
+set_property LOC BUFGCTRL_X0Y2 [get_cells top_i/static_logic/elink2/eclock_0/inst/lclk_s_buf]
+set_property LOC BUFGCTRL_X0Y16 [get_cells top_i/static_logic/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG]
+
+# Location of IO Clock Primitives
+set_property LOC BUFIO_X1Y10 [get_cells top_i/static_logic/elink2/eio_rx_0/inst/bufio_rxlclk]
+
+# Location of MMCM Clock Primitives
+
+# Location of BUFH Clock Primitives
+
+# Location of BUFR Clock Primitives
+set_property LOC BUFR_X1Y9 [get_cells top_i/static_logic/elink2/eio_rx_0/inst/clkout_bufr]
+
+# Location of BUFMR Clock Primitives
+
+# Location of PLL Clock Primitives
+set_property LOC PLLE2_ADV_X1Y0 [get_cells top_i/static_logic/elink2/eclock_0/inst/eclk_pll]
+
+# Location of IO Primitives which is load of clock spine
+
+# Location of clock ports
+set_property LOC IOB_X1Y125 [get_ports RX_lclk_n]
+set_property LOC IOB_X1Y126 [get_ports RX_lclk_p]
+
+# Clock net "top_i/static_logic/elink2/eclock_0/inst/cclk_base" driven by instance "top_i/static_logic/elink2/eclock_0/inst/cclk_buf" located at site "BUFGCTRL_X0Y4"
+#startgroup
+create_pblock {CLKAG_top_i/static_logic/elink2/eclock_0/inst/cclk_base}
+add_cells_to_pblock [get_pblocks  {CLKAG_top_i/static_logic/elink2/eclock_0/inst/cclk_base}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="top_i/static_logic/elink2/eclock_0/inst/cclk_base"}]]]
+resize_pblock [get_pblocks {CLKAG_top_i/static_logic/elink2/eclock_0/inst/cclk_base}] -add {CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "top_i/static_logic/elink2/eclock_0/inst/cclk_p" driven by instance "top_i/static_logic/elink2/eclock_0/inst/cclk_p_buf" located at site "BUFGCTRL_X0Y1"
+#startgroup
+create_pblock {CLKAG_top_i/static_logic/elink2/eclock_0/inst/cclk_p}
+add_cells_to_pblock [get_pblocks  {CLKAG_top_i/static_logic/elink2/eclock_0/inst/cclk_p}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="top_i/static_logic/elink2/eclock_0/inst/cclk_p"}]]]
+resize_pblock [get_pblocks {CLKAG_top_i/static_logic/elink2/eclock_0/inst/cclk_p}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "top_i/static_logic/elink2/eclock_0/inst/lclk_out" driven by instance "top_i/static_logic/elink2/eclock_0/inst/lclk_out_buf" located at site "BUFGCTRL_X0Y3"
+#startgroup
+create_pblock {CLKAG_top_i/static_logic/elink2/eclock_0/inst/lclk_out}
+add_cells_to_pblock [get_pblocks  {CLKAG_top_i/static_logic/elink2/eclock_0/inst/lclk_out}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="top_i/static_logic/elink2/eclock_0/inst/lclk_out"}]]]
+resize_pblock [get_pblocks {CLKAG_top_i/static_logic/elink2/eclock_0/inst/lclk_out}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "top_i/static_logic/elink2/eclock_0/inst/lclk_p" driven by instance "top_i/static_logic/elink2/eclock_0/inst/lclk_p_buf" located at site "BUFGCTRL_X0Y0"
+#startgroup
+create_pblock {CLKAG_top_i/static_logic/elink2/eclock_0/inst/lclk_p}
+add_cells_to_pblock [get_pblocks  {CLKAG_top_i/static_logic/elink2/eclock_0/inst/lclk_p}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="top_i/static_logic/elink2/eclock_0/inst/lclk_p"}]]]
+resize_pblock [get_pblocks {CLKAG_top_i/static_logic/elink2/eclock_0/inst/lclk_p}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "top_i/static_logic/elink2/eclock_0/inst/lclk_s" driven by instance "top_i/static_logic/elink2/eclock_0/inst/lclk_s_buf" located at site "BUFGCTRL_X0Y2"
+#startgroup
+create_pblock {CLKAG_top_i/static_logic/elink2/eclock_0/inst/lclk_s}
+add_cells_to_pblock [get_pblocks  {CLKAG_top_i/static_logic/elink2/eclock_0/inst/lclk_s}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="top_i/static_logic/elink2/eclock_0/inst/lclk_s"}]]]
+resize_pblock [get_pblocks {CLKAG_top_i/static_logic/elink2/eclock_0/inst/lclk_s}] -add {CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "top_i/static_logic/elink2/eio_rx_0/inst/rxlclk_p" driven by instance "top_i/static_logic/elink2/eio_rx_0/inst/clkout_bufr" located at site "BUFR_X1Y9"
+#startgroup
+create_pblock {CLKAG_top_i/static_logic/elink2/eio_rx_0/inst/rxlclk_p}
+add_cells_to_pblock [get_pblocks  {CLKAG_top_i/static_logic/elink2/eio_rx_0/inst/rxlclk_p}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="top_i/static_logic/elink2/eio_rx_0/inst/rxlclk_p"}]]]
+resize_pblock [get_pblocks {CLKAG_top_i/static_logic/elink2/eio_rx_0/inst/rxlclk_p}] -add {CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "top_i/static_logic/processing_system7_0/inst/FCLK_CLK0" driven by instance "top_i/static_logic/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG" located at site "BUFGCTRL_X0Y16"
+#startgroup
+create_pblock {CLKAG_top_i/static_logic/processing_system7_0/inst/FCLK_CLK0}
+add_cells_to_pblock [get_pblocks  {CLKAG_top_i/static_logic/processing_system7_0/inst/FCLK_CLK0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=top_i/static_logic/elink2/eclock_0/inst/eclk_pll} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="top_i/static_logic/processing_system7_0/inst/FCLK_CLK0"}]]]
+resize_pblock [get_pblocks {CLKAG_top_i/static_logic/processing_system7_0/inst/FCLK_CLK0}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup

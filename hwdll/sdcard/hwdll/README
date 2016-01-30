@@ -1,0 +1,46 @@
+#####################################################################################################################
+#																													#
+#								Bi-Semestrial Student Project (2014 – 2015)											#
+#								Parallel Systems Laboratory															#
+#								Electrical Engineering Department													#
+#								Technion – Israel Institute of Technology											#
+#																													#
+#	Title:						Hardware DLL																		#
+#	Subject:					Real Time Partial Reconfiguration Management of FPGA by OS							#
+#																													#
+#	Author:						Alon Reznik																			#
+#	Supervisor:					Oz Shmueli																			#
+#																													#
+#	File Name:					README																				#
+#	Last Update:				24/01/2016																			#
+#																													#
+#####################################################################################################################
+
+Hardware DLL needs superuser permissions to access the PR_FILE, CFG_FILE, and MEM_FILE files.
+
+Addresses are represented in hexadecimal bytes. Example: 64KB = 65536B = 0x10000.
+All hardware accelerator interrupts and the data signal of ap_return are ignored.
+
+The maximum number of I/O parameters per hardware accelerator is determined by the address range of each reconfigurable partition (RP_RANGE); therefore it is a hard limit (set by hardware).
+The maximum number of hardware accelerators (HWA_MAX) is a soft limit (set by software).
+
+The first local maximum number of reconfigurable partitions (CHAR_BIT * sizeof (int)) is a hard limit.
+The second local maximum number of reconfigurable partitions (RP_MAX) is a soft limit.
+The absolute maximum number of reconfigurable partitions is the minimum of the two local maxima.
+
+The maximum size of a partial bin file on a 32-bit system is 2GB.
+This hard limit is not enforced by Hardware DLL. Users should verify the sizes of their partial bin files.
+
+Hardware DLL was tested within these limits.
+If the soft limits are modified, Hardware DLL may still function correctly, but some information will not be properly displayed.
+The hard limits should not be modified!
+
+
+
+Software Notes:
+
+The "timespec" data structures are synchronized each time their "tv_nsec" member wraps (rolls over from its maximum count back to zero during the measurement interval).
+However, there is no need to check if the "tv_sec" member wraps, because its count cycle is more than 68 years long.
+
+The condition "sort_hwa_list[j]->rm_avl_size < sort_hwa_list[length]->rm_avl_size" is used in interface function "hwdll_load_list" to sort the list of hardware accelerator pointers.
+If the two numbers of available reconfigurable modules are equal to each other, the hardware accelerator pointers are ordered arbitrary.

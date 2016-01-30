@@ -1,0 +1,49 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port RX -pg 1 -y 320 -defaultsOSRD
+preplace port DDR -pg 1 -y 20 -defaultsOSRD
+preplace port CCLK_N -pg 1 -y 520 -defaultsOSRD
+preplace port I2C_SDA -pg 1 -y 600 -defaultsOSRD
+preplace port CCLK_P -pg 1 -y 500 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 40 -defaultsOSRD
+preplace port TX -pg 1 -y 480 -defaultsOSRD
+preplace port I2C_SCL -pg 1 -y 620 -defaultsOSRD
+preplace portBus GPIO_N -pg 1 -y 580 -defaultsOSRD
+preplace portBus DSP_RESET_N -pg 1 -y 540 -defaultsOSRD
+preplace portBus GPIO_P -pg 1 -y 560 -defaultsOSRD
+preplace inst static_logic -pg 1 -lvl 1 -y 320 -defaultsOSRD
+preplace inst reconfigurable_logic -pg 1 -lvl 2 -y 260 -defaultsOSRD
+preplace netloc axi_interconnect_0_M09_AXI 1 1 1 N
+preplace netloc processing_system7_0_DDR 1 1 2 NJ 20 NJ
+preplace netloc elink2_CCLK_N 1 1 2 NJ 490 NJ
+preplace netloc axi_interconnect_0_M13_AXI 1 1 1 N
+preplace netloc axi_interconnect_0_M12_AXI 1 1 1 N
+preplace netloc RX_1 1 0 1 N
+preplace netloc elink2_CCLK_P 1 1 2 NJ 500 NJ
+preplace netloc axi_interconnect_0_M10_AXI 1 1 1 N
+preplace netloc axi_interconnect_0_M02_AXI 1 1 1 N
+preplace netloc elink2_mcfg4_sw_reset 1 1 2 NJ 540 NJ
+preplace netloc axi_interconnect_0_M07_AXI 1 1 1 N
+preplace netloc axi_interconnect_0_M08_AXI 1 1 1 N
+preplace netloc axi_interconnect_0_M04_AXI 1 1 1 N
+preplace netloc axi_interconnect_0_M15_AXI 1 1 1 N
+preplace netloc processing_system7_0_FIXED_IO 1 1 2 NJ 30 NJ
+preplace netloc axi_interconnect_0_M05_AXI 1 1 1 N
+preplace netloc axi_interconnect_0_M00_AXI 1 1 1 N
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 1 250
+preplace netloc axi_interconnect_0_M01_AXI 1 1 1 N
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 1 240
+preplace netloc Net1 1 1 2 NJ 550 NJ
+preplace netloc Net 1 1 2 NJ 520 NJ
+preplace netloc axi_interconnect_0_M14_AXI 1 1 1 N
+preplace netloc axi_interconnect_0_M06_AXI 1 1 1 N
+preplace netloc elink2_TX 1 1 2 NJ 480 NJ
+preplace netloc Net2 1 1 2 NJ 570 NJ
+preplace netloc axi_interconnect_0_M11_AXI 1 1 1 N
+preplace netloc axi_interconnect_0_M03_AXI 1 1 1 N
+preplace netloc Net3 1 1 2 NJ 590 NJ
+levelinfo -pg 1 -20 110 400 550 -top 0 -bot 640
+",
+}
+0

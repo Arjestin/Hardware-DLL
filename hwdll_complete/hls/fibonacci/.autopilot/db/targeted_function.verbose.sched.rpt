@@ -1,0 +1,202 @@
+
+
+================================================================
+== Vivado HLS Report for 'targeted_function'
+================================================================
+* Date:           Fri Jan 22 13:04:56 2016
+
+* Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
+* Project:        hls
+* Solution:       fibonacci
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      5.46|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|   46|    2|   47|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+--------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  |  Trip  |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  |  Count | Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+--------+----------+
+        |- Loop 1  |    1|   45|         1|          -|          -| 1 ~ 45 |    no    |
+        +----------+-----+-----+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 2
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!or_cond & !icmp & !exitcond)
+* FSM state operations: 
+
+ <State 1>: 5.07ns
+ST_1: stg_3 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(i32 %input_000) nounwind, !map !0
+
+ST_1: stg_4 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i32* %output_000) nounwind, !map !6
+
+ST_1: stg_5 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !12
+
+ST_1: stg_6 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecTopModule([18 x i8]* @targeted_function_str) nounwind
+
+ST_1: input_000_read [1/1] 1.00ns
+:4  %input_000_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %input_000) nounwind
+
+ST_1: stg_8 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecInterface(i32* %output_000, [10 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [3 x i8]* @p_str1, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: stg_9 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecInterface(i32 %input_000, [10 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [3 x i8]* @p_str1, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: stg_10 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [3 x i8]* @p_str1, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: tmp [1/1] 0.00ns
+:8  %tmp = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %input_000_read, i32 31)
+
+ST_1: tmp_1 [1/1] 2.52ns
+:9  %tmp_1 = icmp sgt i32 %input_000_read, 46
+
+ST_1: or_cond [1/1] 1.37ns
+:10  %or_cond = or i1 %tmp, %tmp_1
+
+ST_1: stg_14 [1/1] 0.00ns
+:11  br i1 %or_cond, label %1, label %2
+
+ST_1: tmp_2 [1/1] 0.00ns
+:0  %tmp_2 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %input_000_read, i32 1, i32 31)
+
+ST_1: icmp [1/1] 2.50ns
+:1  %icmp = icmp slt i31 %tmp_2, 1
+
+ST_1: stg_17 [1/1] 1.57ns
+:2  br i1 %icmp, label %3, label %.preheader
+
+ST_1: stg_18 [1/1] 1.00ns
+:0  call void @_ssdm_op_Write.s_axilite.i32P(i32* %output_000, i32 %input_000_read) nounwind
+
+ST_1: stg_19 [1/1] 1.57ns
+:1  br label %.loopexit
+
+ST_1: stg_20 [1/1] 1.00ns
+:0  call void @_ssdm_op_Write.s_axilite.i32P(i32* %output_000, i32 -1) nounwind
+
+ST_1: stg_21 [1/1] 1.57ns
+:1  br label %.loopexit
+
+
+ <State 2>: 5.46ns
+ST_2: i [1/1] 0.00ns
+.preheader:0  %i = phi i6 [ %i_1, %4 ], [ 1, %2 ]
+
+ST_2: first [1/1] 0.00ns
+.preheader:1  %first = phi i32 [ %first_1, %4 ], [ 0, %2 ]
+
+ST_2: first_1 [1/1] 0.00ns
+.preheader:2  %first_1 = phi i32 [ %second, %4 ], [ 1, %2 ]
+
+ST_2: i_cast [1/1] 0.00ns
+.preheader:3  %i_cast = zext i6 %i to i32
+
+ST_2: exitcond [1/1] 2.52ns
+.preheader:4  %exitcond = icmp eq i32 %i_cast, %input_000_read
+
+ST_2: empty [1/1] 0.00ns
+.preheader:5  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 45, i64 0) nounwind
+
+ST_2: stg_28 [1/1] 1.57ns
+.preheader:6  br i1 %exitcond, label %.loopexit, label %4
+
+ST_2: second [1/1] 2.44ns
+:0  %second = add nsw i32 %first, %first_1
+
+ST_2: stg_30 [1/1] 1.00ns
+:1  call void @_ssdm_op_Write.s_axilite.i32P(i32* %output_000, i32 %second) nounwind
+
+ST_2: i_1 [1/1] 1.72ns
+:2  %i_1 = add i6 %i, 1
+
+ST_2: stg_32 [1/1] 0.00ns
+:3  br label %.preheader
+
+ST_2: p_0 [1/1] 0.00ns
+.loopexit:0  %p_0 = phi i1 [ true, %1 ], [ false, %3 ], [ false, %.preheader ]
+
+ST_2: p_0_cast [1/1] 1.37ns
+.loopexit:1  %p_0_cast = select i1 %p_0, i32 -1, i32 0
+
+ST_2: stg_35 [1/1] 0.00ns
+.loopexit:2  ret i32 %p_0_cast
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

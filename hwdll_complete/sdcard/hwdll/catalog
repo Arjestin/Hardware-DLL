@@ -1,0 +1,62 @@
+#####################################################################################################################
+#																													#
+#								Bi-Semestrial Student Project (2014 – 2015)											#
+#								Parallel Systems Laboratory															#
+#								Electrical Engineering Department													#
+#								Technion – Israel Institute of Technology											#
+#																													#
+#	Title:						Hardware DLL																		#
+#	Subject:					Real Time Partial Reconfiguration Management of FPGA by OS							#
+#																													#
+#	Author:						Alon Reznik																			#
+#	Supervisor:					Oz Shmueli																			#
+#																													#
+#	File Name:					catalog																				#
+#	Last Update:				24/01/2016																			#
+#																													#
+#####################################################################################################################
+#
+#
+#
+# ID | In  | Out | Library pathname
+#––––|–––––|–––––|––––––––––––––––––
+ 000 |   0 | 256 | /sdcard/hwdll/library/dummy
+ 001 |   0 | 256 | /sdcard/hwdll/library/numbers
+ 002 |   0 |   1 | /sdcard/hwdll/library/int_max
+ 003 |   2 |   2 | /sdcard/hwdll/library/adder_subtractor
+ 004 |   2 |   1 | /sdcard/hwdll/library/multiplier
+ 005 |   1 |   1 | /sdcard/hwdll/library/bitwise_right_shift
+ 006 |   2 |   1 | /sdcard/hwdll/library/gcd
+ 007 |   1 |   1 | /sdcard/hwdll/library/fibonacci
+ 008 |   1 |   1 | /sdcard/hwdll/library/prime
+ 009 |   1 |   2 | /sdcard/hwdll/library/prime_neighbours
+#
+#
+#
+#####################################################################################################################
+#																													#
+#	Entry line components:																							#
+#								1) ID  - Identifier.																#
+#								2) In  - Number of input parameters.												#
+#								3) Out - Number of output parameters.												#
+#								4) Pathname of the reconfigurable modules' library.									#
+#																													#
+#	Notes:																											#
+#								Lines must not exceed the maximum of STR_MAX characters.							#
+#								Hardware DLL reads only entry lines. Comment lines are ignored.						#
+#								The first character in a comment line must be a number sign (#).					#
+#								No blank lines are allowed!															#
+#																													#
+#								A single vertical bar (|) must appear between entry line components.				#
+#								A single whitespace ( ) or (	) must appear before the library pathname.			#
+#								Whitespaces may appear before and/or after other entry line components.				#
+#																													#
+#								Identifiers' range: [0 – HWA_MAX-1]. Identifiers may contain leading zeroes.		#
+#								Maximum number of I/O parameters per hardware accelerator = (ADDR_RANGE/4-4)/2,		#
+#								Where ADDR_RANGE is the address range of each reconfigurable partition.				#
+#																													#
+#								Pathnames may be absolute or relative.												#
+#								Use forward slashes (/) to separate name components in Linux OS.					#
+#								Use backslashes (\) to separate name components in Windows OS.						#
+#																													#
+#####################################################################################################################
